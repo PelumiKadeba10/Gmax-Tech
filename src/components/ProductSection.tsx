@@ -2,48 +2,48 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { Laptop, Smartphone, Printer, Home, Network } from 'lucide-react';
+import { Laptop, Smartphone, Printer, Home, Network, ArrowRight } from 'lucide-react';
 
-// Product category data
+// Product category data with improved images
 const categories = [
   {
     id: 'laptops',
-    title: 'Laptops',
+    title: 'Laptops & Computing',
     icon: Laptop,
-    description: 'Powerful laptops for work, gaming, and everyday use',
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Powerful laptops and computing solutions for work, gaming, and creative professionals',
+    image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     color: 'from-blue-500 to-cyan-400'
   },
   {
     id: 'phones',
     title: 'Phones & Tablets',
     icon: Smartphone,
-    description: 'Stay connected with the latest mobile devices',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Premium smartphones and tablets with cutting-edge features and capabilities',
+    image: 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     color: 'from-purple-500 to-pink-400'
   },
   {
     id: 'office',
     title: 'Office Equipment',
     icon: Printer,
-    description: 'Professional equipment for your workspace',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Professional equipment and solutions to boost your workspace productivity',
+    image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     color: 'from-green-500 to-emerald-400'
   },
   {
     id: 'home',
-    title: 'Home Appliances',
+    title: 'Smart Home',
     icon: Home,
-    description: 'Smart devices for a connected home',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Connected smart devices that transform your living space with automation and intelligence',
+    image: 'https://images.unsplash.com/photo-1558002038-1055e2e28ed1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     color: 'from-amber-500 to-orange-400'
   },
   {
     id: 'networking',
-    title: 'Networking Gadgets',
+    title: 'Networking & Connectivity',
     icon: Network,
-    description: 'Connectivity solutions for seamless performance',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'High-performance networking solutions for seamless connectivity and data transfer',
+    image: 'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     color: 'from-red-500 to-rose-400'
   }
 ];
@@ -62,7 +62,7 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden"
+      className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden mb-8"
       initial="hidden"
       animate={controls}
       variants={{
@@ -77,21 +77,21 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
         }
       }}
     >
-      <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+      <div className="w-full md:w-1/2 h-80 md:h-96 overflow-hidden">
         <img 
           src={category.image} 
           alt={category.title}
           className="w-full h-full object-cover transition duration-500 hover:scale-105"
         />
       </div>
-      <div className="w-full md:w-1/2 p-6 md:p-8">
+      <div className="w-full md:w-1/2 p-6 md:p-8 lg:p-10">
         <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${category.color} text-white mb-4`}>
           <category.icon size={24} />
         </div>
-        <h3 className="text-2xl font-bold text-gmax-dark mb-3">{category.title}</h3>
-        <p className="text-gray-600 mb-4">{category.description}</p>
+        <h3 className="text-2xl lg:text-3xl font-bold text-gmax-dark mb-3">{category.title}</h3>
+        <p className="text-gray-600 mb-6 lg:text-lg">{category.description}</p>
         <button className="flex items-center font-medium text-gmax-blue hover:text-gmax-accent transition-colors">
-          View Products <ArrowRight className="ml-2 h-4 w-4" />
+          Explore Products <ArrowRight className="ml-2 h-4 w-4" />
         </button>
       </div>
     </motion.div>
@@ -143,23 +143,3 @@ const ProductSection = () => {
 };
 
 export default ProductSection;
-
-// This is necessary for VSCode to not complain
-export const ArrowRight = ({ className = "", ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={`lucide lucide-arrow-right ${className}`}
-    {...props}
-  >
-    <path d="M5 12h14" />
-    <path d="m12 5 7 7-7 7" />
-  </svg>
-);
