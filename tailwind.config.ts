@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				gmax: {
+					blue: '#1A3A83',
+					dark: '#222222',
+					accent: '#FFA500'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +90,52 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				typing: {
+					from: { width: '0' },
+					to: { width: '100%' }
+				},
+				blink: {
+					'0%, 100%': { borderColor: 'transparent' },
+					'50%': { borderColor: 'currentColor' }
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
+					}
+				},
+				'slide-in-right': {
+					'0%': {
+						transform: 'translateX(100px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				typing: 'typing 3.5s steps(40, end)',
+				blink: 'blink 1s step-end infinite',
+				'fade-in-up': 'fade-in-up 0.7s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out',
+				'slide-in-right': 'slide-in-right 0.7s ease-out'
 			}
 		}
 	},
