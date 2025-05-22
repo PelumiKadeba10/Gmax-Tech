@@ -8,7 +8,7 @@ import { Laptop, Smartphone, Printer, Home, Network, ArrowRight } from 'lucide-r
 const categories = [
   {
     id: 'laptops',
-    title: 'Laptops & Computing',
+    title: 'Laptops',
     icon: Laptop,
     description: 'Powerful laptops and computing solutions for work, gaming, and creative professionals',
     image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -18,8 +18,8 @@ const categories = [
     id: 'phones',
     title: 'Phones & Tablets',
     icon: Smartphone,
-    description: 'Premium smartphones and tablets with cutting-edge features and capabilities',
-    image: 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Premium smartphones and tablets regardless of brand with cutting-edge features and capabilities',
+    image: '/assets/phones.jpeg',
     color: 'from-purple-500 to-pink-400'
   },
   {
@@ -32,18 +32,18 @@ const categories = [
   },
   {
     id: 'home',
-    title: 'Smart Home',
+    title: 'Home Appliances',
     icon: Home,
     description: 'Connected smart devices that transform your living space with automation and intelligence',
-    image: 'https://images.unsplash.com/photo-1558002038-1055e2e28ed1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/assets/home.jpg',
     color: 'from-amber-500 to-orange-400'
   },
   {
     id: 'networking',
-    title: 'Networking & Connectivity',
+    title: 'Networking',
     icon: Network,
     description: 'High-performance networking solutions for seamless connectivity and data transfer',
-    image: 'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/assets/network.png',
     color: 'from-red-500 to-rose-400'
   }
 ];
@@ -62,7 +62,7 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden mb-8"
+      className="flex flex-col md:flex-row items-center rounded-xl shadow-lg overflow-hidden mb-8"
       initial="hidden"
       animate={controls}
       variants={{

@@ -1,10 +1,10 @@
 
 import React, { useEffect } from 'react';
+// import TopNav from '@/components/TopNav';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ProductSection from '../components/ProductSection';
 import FeaturesSection from '../components/FeaturesSection';
-import TestimonialSection from '../components/TestimonialSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 
@@ -16,6 +16,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* <TopNav /> */}
       <Navbar />
       <main>
         <HeroSection />
@@ -23,12 +24,7 @@ const Index = () => {
         <section id="features">
           <FeaturesSection />
         </section>
-        <section id="testimonials">
-          <TestimonialSection />
-        </section>
-        <section id="cta">
-          <CTASection />
-        </section>
+        <CTASection />
       </main>
       <Footer />
     </div>

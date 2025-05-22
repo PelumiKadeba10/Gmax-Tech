@@ -1,123 +1,81 @@
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import Typed from 'typed.js';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import { Typewriter } from 'react-simple-typewriter'; // Import the Typewriter component
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/autoplay';
-
-const techImages = [
-  'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-];
-
-const HeroSection = () => {
-  const el = useRef(null);
-  
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: [
-        'Next-Gen Tech Gadgets', 
-        'Premium Electronics', 
-        'Smart Solutions',
-        'Innovative Devices'
-      ],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 1500,
-      loop: true,
-      showCursor: false, // Remove the cursor
-    });
-    
-    return () => {
-      typed.destroy();
-    };
-  }, []);
-  
+export default function HeroSection() {
   return (
-    <section 
-      id="home"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
-    >
+    <section id="hero" className="relative h-screen text-white isolate">
       {/* Background Swiper */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute w-full h-full overflow-hidden">
         <Swiper
-          modules={[Autoplay, EffectFade]}
-          effect="fade"
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          speed={1500}
-          className="h-full w-full"
+          modules={[Autoplay]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop
+          className="w-full h-full"
         >
-          {techImages.map((image, index) => (
-            <SwiperSlide key={index} className="h-full w-full">
-              <div 
-                className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30 z-10"
-              />
-              <img 
-                src={image} 
-                alt={`Tech background ${index + 1}`}
-                className="h-full w-full object-cover"
-              />
-            </SwiperSlide>
-          ))}
+          <SwiperSlide>
+            <img
+              src="/assets/slider1.png" // Image inside the 'public' folder
+              alt="Tech 3"
+              width={1000}
+              height={600}
+              className="w-full h-full object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/assets/hero3.jpeg"
+              alt="Tech 5"
+              width={1000}
+              height={600}
+              className="w-full h-full object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/assets/slider2.webp"
+              alt="Tech 4"
+              width={1000}
+              height={600}
+              className="w-full h-full object-cover"
+            />
+          </SwiperSlide>
         </Swiper>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 relative z-10">
-        <div className="flex flex-col items-center md:items-start">
-          <motion.div 
-            className="max-w-3xl text-center md:text-left"
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              Discover <span className="text-gmax-accent">Premium</span> <br />
-              <span ref={el} className="text-gmax-accent"></span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl">
-              Experience cutting-edge technology with Gmax Technologies. We offer a wide range of premium gadgets and devices to elevate your digital lifestyle.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button className="bg-gmax-blue hover:bg-gmax-blue/90 text-white text-lg px-8 py-6">
-                Shop Now
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8 py-6">
-                Learn More <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </motion.div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/55 z-10" />
+
+      {/* Foreground Text */}
+      <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
+        <div>
+          <h1 className="text-5xl md:text-6xl text-white font-bold mb-4">
+            <Typewriter
+              words={['Upgrade Your Tech Life Now']}  // Text to type
+              loop={1}  // How many times the text will be typed
+              cursorStyle="_"  // Cursor style
+              typeSpeed={100}  // Speed at which each character is typed
+              deleteSpeed={50}  // Speed at which the text is deleted
+              delaySpeed={1000}  // Delay before deleting the text
+            />
+          </h1>
+          <p className="text-lg md:text-xl mb-12">
+            Discover the latest gadgets, laptops, and accessories at unbeatable prices. 
+            Repair Faulty Gadgets at affordable Prices.
+          </p>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <a
+              href="#phones"
+              className="bg-blue-900 hover:bg-white hover:text-black font-semibold py-3 px-6 rounded-md transition-duration-3"
+            >
+              Shop Now
+            </a>
+          </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-        <a 
-          href="#products" 
-          className="flex flex-col items-center text-white hover:text-gmax-accent transition-colors"
-        >
-          <span className="text-sm font-medium mb-2">Explore Our Products</span>
-          <motion.div 
-            animate={{ y: [0, 10, 0] }} 
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <ArrowRight className="h-6 w-6 transform rotate-90" />
-          </motion.div>
-        </a>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}
