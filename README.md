@@ -1,6 +1,6 @@
 # Gmax Technologies – Tech Gadget Store Landing Page
 
-A sleek, modern, and fully responsive landing page for **Gmax Technologies**, a tech gadget store. Built using **Next.js**, **Tailwind CSS**, **shadcn/ui**, **React Icons**, and **Framer Motion** for scroll-based animations.
+A sleek, modern, and fully responsive landing page for **Gmax Technologies**, a tech gadget store. Built using **React.js**, **Tailwind CSS**, **shadcn/ui**, **React Icons**, and **Framer Motion** for scroll-based animations.
 
 ## ✨ Features
 
