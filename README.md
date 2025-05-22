@@ -19,11 +19,9 @@ A sleek, modern, and fully responsive landing page for **Gmax Technologies**, a 
 
 ## 🔧 Tech Stack
 
-- [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [React Icons](https://react-icons.github.io/react-icons/)
 
 ## 🚀 Getting Started
 
