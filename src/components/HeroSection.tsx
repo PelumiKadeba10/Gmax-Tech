@@ -68,7 +68,7 @@ export default function HeroSection() {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#phones"
+              href="https://gmaxtechnology.com/shop/"
               className="bg-blue-900 hover:bg-white hover:text-black font-semibold py-3 px-6 rounded-md transition-duration-3"
             >
               Shop Now

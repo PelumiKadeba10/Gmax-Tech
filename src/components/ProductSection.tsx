@@ -61,6 +61,7 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
   
   return (
     <motion.div
+      id={category.id}
       ref={ref}
       className="flex flex-col md:flex-row items-center rounded-xl shadow-lg overflow-hidden mb-8"
       initial="hidden"
@@ -90,9 +91,11 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
         </div>
         <h3 className="text-2xl lg:text-3xl font-bold text-gmax-dark mb-3">{category.title}</h3>
         <p className="text-gray-600 mb-6 lg:text-lg">{category.description}</p>
-        <button className="flex items-center font-medium text-gmax-blue hover:text-gmax-accent transition-colors">
+        <a href='https://gmaxtechnology.com/shop'>
+          <button className="flex items-center font-medium text-gmax-blue hover:text-gmax-accent transition-colors">
           Explore Products <ArrowRight className="ml-2 h-4 w-4" />
         </button>
+        </a>
       </div>
     </motion.div>
   );
