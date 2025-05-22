@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, User, Laptop, Info, Search } from 'lucide-react';
+import { Menu, User, Laptop, Info, Search, Clock} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -46,12 +46,13 @@ const Navbar = () => {
       {/* Top Nav */}
       <div className="w-full bg-black text-slate-300 px-4 md:px-10 py-3 text-sm border-b-2 border-black">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-1 text-center md:text-left">
-          <div className="text-sm font-semibold">
-            Welcome to <span className="font-semibold text-yellow-400">GMAX Online Store</span>
+          <div className="text-lg font-semibold">
+            Welcome to <span className="font-semibold">GMAX Online Store !</span>
           </div>
-          <div className="text-sm font-semibold">
+          <div className="text-sm font-semibold flex gap-2">
+            <span><Clock /></span>
             <span>Opening Hours:</span>{' '}
-            <span className="text-green-500 font-medium">8:00 AM - 10:00 PM</span>{' '}
+            <span className="text-green-500 font-medium"> 8:00 AM - 10:00 PM</span>{' '}
             <span>(Monday - Friday)</span>
           </div>
         </div>
@@ -99,14 +100,14 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-8 md:pr-5">
           {/* Search Bar */}
           <div className="relative">
             <Search className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500`} />
             <Input
               type="text"
               placeholder="Search..."
-              className={`pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none transition-all duration-200 ${
+              className={`pl-10 pr-4 w-80 h-10 text-sm transition-all duration-200 ${
                 isScrolled ? 'bg-white text-black' : 'bg-white/90 text-black'
               }`}
             />
@@ -151,13 +152,13 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden shadow-lg bg-white">
           {/* Mobile Search */}
-          <div className="px-6 pt-5 justify-center align-center">
+          <div className="px-6 pt-5 flex justify-center items-center">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" />
               <Input
                 type="text"
-                placeholder="Search..."
-                className="pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-full bg-white text-black"
+                placeholder="Search...."
+                className="pl-10 pr-4 py-2 w-full text-sm border border-gray-500 bg-white text-black"
               />
             </div>
           </div>

@@ -10,9 +10,10 @@ const categories = [
     id: 'laptops',
     title: 'Laptops',
     icon: Laptop,
-    description: 'Powerful laptops and computing solutions for work, gaming, and creative professionals',
-    image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    color: 'from-blue-500 to-cyan-400'
+    description: 'Powerful Laptops, Monitors, Workstations, Hybrid PCs and CPU`s for work, gaming, and creative professionals',
+    image: '/assets/L.webp',
+    color: 'from-blue-600 to-purple-400',
+    imgleft: false
   },
   {
     id: 'phones',
@@ -20,7 +21,8 @@ const categories = [
     icon: Smartphone,
     description: 'Premium smartphones and tablets regardless of brand with cutting-edge features and capabilities',
     image: '/assets/phones.jpeg',
-    color: 'from-purple-500 to-pink-400'
+    color: 'from-amber-200 to-amber-400',
+    imgleft: true
   },
   {
     id: 'office',
@@ -28,7 +30,8 @@ const categories = [
     icon: Printer,
     description: 'Professional equipment and solutions to boost your workspace productivity',
     image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    color: 'from-green-500 to-emerald-400'
+    color: 'from-green-500 to-emerald-400',
+    imgleft: false
   },
   {
     id: 'home',
@@ -36,7 +39,8 @@ const categories = [
     icon: Home,
     description: 'Connected smart devices that transform your living space with automation and intelligence',
     image: '/assets/home.jpg',
-    color: 'from-amber-500 to-orange-400'
+    color: 'from-blue-500 to-blue-400',
+    imgleft: true
   },
   {
     id: 'networking',
@@ -44,7 +48,8 @@ const categories = [
     icon: Network,
     description: 'High-performance networking solutions for seamless connectivity and data transfer',
     image: '/assets/network.png',
-    color: 'from-red-500 to-rose-400'
+    color: 'from-red-500 to-rose-400',
+    imgleft: false
   }
 ];
 
@@ -63,7 +68,7 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
     <motion.div
       id={category.id}
       ref={ref}
-      className="flex flex-col md:flex-row items-center rounded-xl shadow-lg overflow-hidden mb-8"
+      className={`flex flex-col md:flex-row items-center shadow-lg overflow-hidden mb-8 hover:shadow-xl ${category.imgleft ? "md:flex-row-reverse" : ""}`}
       initial="hidden"
       animate={controls}
       variants={{
@@ -85,12 +90,12 @@ const ProductCategory = ({ category, index }: { category: any; index: number }) 
           className="w-full h-full object-cover transition duration-500 hover:scale-105"
         />
       </div>
-      <div className="w-full md:w-1/2 p-6 md:p-8 lg:p-10">
+      <div className="w-full md:w-1/2 p-6 md:p-8 lg:p-10 ">
         <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${category.color} text-white mb-4`}>
-          <category.icon size={24} />
+          <category.icon size={28} />
         </div>
-        <h3 className="text-2xl lg:text-3xl font-bold text-gmax-dark mb-3">{category.title}</h3>
-        <p className="text-gray-600 mb-6 lg:text-lg">{category.description}</p>
+        <h2 className="text-2xl lg:text-3xl font-bold text-gmax-dark mb-3">{category.title}</h2>
+        <p className="text-gray-800 mb-6 lg:text-lg">{category.description}</p>
         <a href='https://gmaxtechnology.com/shop'>
           <button className="flex items-center font-medium text-gmax-blue hover:text-gmax-accent transition-colors">
           Explore Products <ArrowRight className="ml-2 h-4 w-4" />
@@ -129,8 +134,8 @@ const ProductSection = () => {
             }
           }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Our <span className="text-gmax-blue">Product Categories</span></h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Our <span className="text-blue-900">Product Categories</span></h2>
+          <p className="text-gray-800 max-w-2xl mx-auto text-lg">
             Discover our wide range of premium products designed to enhance your tech experience
           </p>
         </motion.div>

@@ -62,9 +62,9 @@ export default function HeroSection() {
               delaySpeed={1000}  // Delay before deleting the text
             />
           </h1>
-          <p className="text-lg md:text-xl mb-12">
+          <p className="text-xl font-semibold md:text-xl mb-12">
             Discover the latest gadgets, laptops, and accessories at unbeatable prices. 
-            Repair Faulty Gadgets at affordable Prices.
+            <p className="pt-3">Repair Faulty Gadgets at affordable Prices.</p>
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
