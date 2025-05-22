@@ -7,9 +7,9 @@ import { Typewriter } from 'react-simple-typewriter'; // Import the Typewriter c
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative h-screen text-white isolate">
+    <section id="hero" className="pt-40 pb-5 h-screen text-white isolate relative">
       {/* Background Swiper */}
-      <div className="absolute w-full h-full overflow-hidden">
+      <div className="w-full absolute inset-0 z-0 h-full overflow-hidden">
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 2000, disableOnInteraction: false }}
@@ -18,7 +18,7 @@ export default function HeroSection() {
         >
           <SwiperSlide>
             <img
-              src="/assets/slider1.png" // Image inside the 'public' folder
+              src="/assets/slider3.jpg" // Image inside the 'public' folder
               alt="Tech 3"
               width={1000}
               height={600}
@@ -47,7 +47,7 @@ export default function HeroSection() {
       </div>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/55 z-10" />
+      <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Foreground Text */}
       <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
