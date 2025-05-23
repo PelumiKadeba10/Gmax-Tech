@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="w-full absolute inset-0 z-0 h-full overflow-hidden">
         <Swiper
           modules={[Autoplay]}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
           loop
           className="w-full h-full"
         >

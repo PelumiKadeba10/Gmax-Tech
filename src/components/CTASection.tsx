@@ -19,7 +19,7 @@ const CTASection = () => {
               Join thousands of satisfied customers who trust Gmax Technologies for premium gadgets and exceptional service.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href='https://gmaxtechnology.com/Shop/'>
+              <a href='https://gmaxtechnology.com/shop/'>
                 <Button className="bg-white text-gmax-blue hover:bg-slate-200 text-lg px-8 py-6">
                 Shop Now
               </Button>

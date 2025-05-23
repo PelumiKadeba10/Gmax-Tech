@@ -102,7 +102,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 md:pr-5">
           {/* Search Bar */}
-          <div className="relative">
+          {/* <div className="relative">
             <Search className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500`} />
             <Input
               type="text"
@@ -111,7 +111,7 @@ const Navbar = () => {
                 isScrolled ? 'bg-white text-black' : 'bg-white/90 text-black'
               }`}
             />
-          </div>
+          </div> */}
 
           {/* Links */}
           <a
@@ -152,7 +152,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden shadow-lg bg-white">
           {/* Mobile Search */}
-          <div className="px-6 pt-5 flex justify-center items-center">
+          {/* <div className="px-6 pt-5 flex justify-center items-center">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" />
               <Input
@@ -161,7 +161,7 @@ const Navbar = () => {
                 className="pl-10 pr-4 py-2 w-full text-sm border border-gray-500 bg-white text-black"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile Links */}
           <div className="flex flex-col justify-center items-center space-y-6 pb-5">
